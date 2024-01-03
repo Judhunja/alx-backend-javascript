@@ -1,10 +1,10 @@
 import { uploadPhoto, createUser } from './utils';
 
 export default function handleProfileSignup() {
-  const pHoto = uploadPhoto();
-  const naMe = createUser();
+  const photoPromise = uploadPhoto();
+  const namePromise = createUser();
 
-  Promise.all([pHoto, naMe]).then((vals) => {
+  Promise.all([photoPromise, namePromise]).then((vals) => {
     const [photo, name] = vals;
     console.log(`${photo.body} ${name.firstName} ${name.lastName}`);
   }).catch((error) => {
