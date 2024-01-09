@@ -4,6 +4,7 @@ export default function cleanSet(set, startString) {
     return newstr;
   }
   for (const elem of set) {
+    if (!elem || elem.length < startString.length) return '';
     if (elem.startsWith(startString)) {
       if (newstr !== '') {
         newstr += '-';
