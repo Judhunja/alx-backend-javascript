@@ -1,7 +1,10 @@
 export default function cleanSet(set, startString) {
   let newstr = '';
+  if (!set || !startString || !(set instanceof Set) || !(typeof startString === 'string')) {
+    return newstr;
+  }
   for (const elem of set) {
-    if (elem.startsWith(startString) && set instanceof Set && typeof startString === 'string' && elem !== undefined && elem !== null && startString !== '' && startString !== null && startString !== undefined) {
+    if (elem.startsWith(startString)) {
       if (newstr !== '') {
         newstr += '-';
       }
