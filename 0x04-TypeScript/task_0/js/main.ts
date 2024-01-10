@@ -25,13 +25,17 @@ const students: StudentArray = [ stu1, stu2 ];
 
 
 function createHead(table: HTMLTableElement) {
+    // function for creating a new table head
     const thead = table.createTHead();
+    // inserts row in the head
     const hrow = thead.insertRow();
     
     Object.keys(students[0]).forEach(key => {
         if (key === 'firstName' || key === 'location') {
+            // adds a header cell to the table head
             const th = document.createElement('th');
             th.textContent = key;
+            // parentNode.appendChild(childNode)
             hrow.appendChild(th);
         }
     });
@@ -47,6 +51,7 @@ function renderTable() {
 
     students.forEach(elem => {
         const tr = tbody.insertRow();
+        // explicitly defining property types for ts
         const firstName: string = elem.firstName;
         const location: string = elem.location;
         // including only first name and location in data
