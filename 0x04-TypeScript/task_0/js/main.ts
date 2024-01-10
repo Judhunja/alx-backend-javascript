@@ -29,9 +29,11 @@ function createHead(table: HTMLTableElement) {
     const hrow = thead.insertRow();
     
     Object.keys(students[0]).forEach(key => {
-        const th = document.createElement('th');
-        th.textContent = key;
-        hrow.appendChild(th);
+        if (key === 'firstName' || key === 'location') {
+            const th = document.createElement('th');
+            th.textContent = key;
+            hrow.appendChild(th);
+        }
     });
 }
 
@@ -45,8 +47,10 @@ function renderTable() {
 
     students.forEach(elem => {
         const tr = tbody.insertRow();
-
-        Object.values(elem).forEach(val => {
+        const firstName: string = elem.firstName;
+        const location: string = elem.location;
+        // including only first name and location in data
+        [firstName, location].forEach(val => {
         const td = document.createElement('td');
         td.textContent = val.toString();
         tr.appendChild(td);
