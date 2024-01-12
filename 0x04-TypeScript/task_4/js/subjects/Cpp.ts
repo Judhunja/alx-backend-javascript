@@ -2,7 +2,7 @@ namespace Subjects {
     export interface Teacher {
         experienceTeachingC?: number;
     }
-    class Cpp extends Subject {
+    export class Cpp extends Subject {
         getRequirements() {
             return 'Here is the list of requirements for Cpp';
         }
