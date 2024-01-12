@@ -1,4 +1,4 @@
-/// <reference path="./crud.js" />
+/// <reference path="./crud.d.ts" />
 import { RowId, RowElement } from './interface';
 import * as CRUD from './crud';
 
@@ -7,7 +7,7 @@ let row: RowElement = {
   lastName: 'Salva',
 };
 
-const newRowID: typeof RowId = CRUD.insertRow(row);
+const newRowID: RowId = CRUD.insertRow(row);
 
 const updatedRow: RowElement = {
   ...row,
@@ -16,3 +16,5 @@ const updatedRow: RowElement = {
 
 CRUD.updateRow(newRowID, updatedRow);
 CRUD.deleteRow(newRowID);
+
+export default newRowID;
