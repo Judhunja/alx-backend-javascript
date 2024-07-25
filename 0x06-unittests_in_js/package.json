@@ -8,5 +8,8 @@
   },
   "scripts": {
     "test": "mocha"
+  },
+  "dependencies": {
+    "chai": "^4.5.0"
   }
 }
