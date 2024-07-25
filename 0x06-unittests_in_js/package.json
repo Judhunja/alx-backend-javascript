@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "mocha": "^10.7.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "eslint": "^9.7.0"
+  }
+}
